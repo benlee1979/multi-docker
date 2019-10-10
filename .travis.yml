@@ -9,15 +9,15 @@ script:
   - docker run -e CI=true docker-multi npm run test -- --coverage
 
 after_success:
-  - docker build -t ben/multi-client ./client
-  - docker build -t ben/multi-server ./server
-  - docker build -t ben/multi-nginx ./ngnix
-  - docker build -t ben/multi-worker ./worker
+  - docker build -t blee1979/multi-client ./client
+  - docker build -t blee1979/multi-server ./server
+  - docker build -t blee1979/multi-nginx ./ngnix
+  - docker build -t blee1979/multi-worker ./worker
 #log in to the docker CLI
   - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
 
 #Take those images and push them to docker hub
-  - docker push ben/multi-client 
-  - docker push ben/multi-server 
-  - docker push ben/multi-ngnix 
-  - docker push ben/multi-worker 
+  - docker push blee1979/multi-client 
+  - docker push blee1979/multi-server 
+  - docker push blee1979/multi-ngnix 
+  - docker push blee1979/multi-worker 
