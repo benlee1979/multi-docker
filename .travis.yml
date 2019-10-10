@@ -11,7 +11,7 @@ script:
 after_success:
   - docker build -t blee1979/multi-client ./client
   - docker build -t blee1979/multi-server ./server
-  - docker build -t blee1979/multi-nginx ./ngnix
+  - docker build -t blee1979/multi-ngnix ./ngnix
   - docker build -t blee1979/multi-worker ./worker
 #log in to the docker CLI
   - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
